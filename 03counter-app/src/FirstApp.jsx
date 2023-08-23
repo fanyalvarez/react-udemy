@@ -12,7 +12,12 @@ export const FirstApp = ({ title, subTitle }) => {
 
 FirstApp.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.number.isRequired
+  subTitle: PropTypes.number.isRequired,
+};
+
+FirstApp.defaultProps = {
+  title: "no hay titulo", //DESDE EL MAIN
+  subTitle: "no hay subtitulo",//DESDE EL MAIN
 };
 
 // //--------------con un valor que no cambiara---------------
