@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App, hola } from "./HelloApp"; 
+import { App, hola } from "./HelloApp";
 import { FirstApp } from "./FirstApp";
-import './style.css'
+import "./style.css";
 import { CounterApp } from "./CounterApp";
-
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <CounterApp value={1214} />
-  </React.StrictMode> 
+    {/* <CounterApp value={1214} /> */}
+    <FirstApp />
+  </React.StrictMode>
 );
-
-
 
 // function App() {
 //   //document.createElement....
@@ -24,5 +22,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //     {/* <App /> */}
 //     {/* <FirstApp title="hola propotype" subTitle={123}/> */}
 //     <FirstApp title="hola soy goku!!" />
-//   </React.StrictMode> 
+//   </React.StrictMode>
 // );
