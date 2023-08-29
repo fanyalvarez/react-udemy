@@ -1,1 +1,1 @@
-import 'whaatwg-fetch';
+import 'whatwg-fetch';
