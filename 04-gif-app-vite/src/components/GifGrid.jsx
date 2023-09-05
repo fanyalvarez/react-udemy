@@ -1,7 +1,7 @@
 import { getGifs } from "../helpers/getGifs";
 
 
-
+console.log('hello')
 
 export const GifGrid = ({ category }) => {
   getGifs(category);
