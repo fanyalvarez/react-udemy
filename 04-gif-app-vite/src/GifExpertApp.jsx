@@ -1,31 +1,43 @@
 import React, { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["avatar", "goku"]);
-  //   console.log(categories);
+  const [categories, setCategories] = useState(["avatar"]);
+  // console.log(categories);
 
-  const onAddCategory = () => {
-    setCategories([...categories, "hola"]);
+  const onAddCategory = (newCategory) => {
+    if (categories.includes(newCategory)) {
+      return;
+    }
+
+    setCategories([newCategory, ...categories]);
+    // categories.push(newCategory);
+    console.log(newCategory);
   };
   return (
     <>
-      {/* titulo */}
+      {/*--------------- titulo-------------- */}
       <h1>GifExpertApp</h1>
+      {/*--------------- input --------------*/}
+      <AddCategory
+        setCategories={setCategories}
+        onNewCategory={onAddCategory} // del value
+      />
 
-      {/* input */}
-      <AddCategory />
+      {/*--------------- listado de gif ---------------*/}
+      {/* <button onClick={onAddCategory}>Agregar</button> */}
 
-      {/* listado de gif */}
-      <button onClick={onAddCategory}>Agregar</button>
-
-      <ol>
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
+      {/* <ol>
         {categories.map((category) => {
           return <li key={category}> {category}</li>;
         })}
-      </ol>
+      </ol> */}
 
-      {/* gif item       */}
+      {/*--------------- gif item   ---------------    */}
     </>
   );
 };
