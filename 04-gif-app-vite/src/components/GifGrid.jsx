@@ -6,8 +6,7 @@ import { useFetchGif } from "../hooks/useFetchGif";
 export const GifGrid = ({ category }) => {
   const { images, isLoading } = useFetchGif(category);
 
-
-  console.log({images, isLoading})
+  console.log({ images, isLoading });
 
   //--------todo esto se traslada a usefecthgrid.js
   // const [images, setImages] = useState([]);
@@ -24,6 +23,9 @@ export const GifGrid = ({ category }) => {
   return (
     <>
       <h3>{category}</h3>
+
+      {/* //ternario simplificado */}
+      {isLoading && <h1>Cargando...</h1>}
 
       <div className="card-grid">
         {images.map((image) => (
